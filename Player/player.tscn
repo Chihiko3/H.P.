@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://bccdd627wxm4w"]
+
+[ext_resource type="Script" path="res://Player/player.gd" id="1_hk5u2"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_eofs7"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_tkaxx"]
+
+[node name="Player" type="CharacterBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+script = ExtResource("1_hk5u2")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_eofs7")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.750399, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("CapsuleMesh_tkaxx")
+
+[node name="FloorDetectRayCast" type="RayCast3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+
+[node name="PlayerFootstepSound" type="AudioStreamPlayer" parent="."]

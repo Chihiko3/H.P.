@@ -1,0 +1,9 @@
+AudioStreamPlayer
+RayCast3D
+MeshInstance3D
+Camera3D
+CollisionShape3D
+CharacterBody3D
+RigidBody3D
+StaticBody3D
+Node
