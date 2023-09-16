@@ -5,6 +5,7 @@ extends CharacterBody3D
 @onready var origCamPos : Vector3 = camera_3d.position
 @onready var floorcast = $FloorDetectRayCast
 @onready var player_footstep_sound = $PlayerFootstepSound
+@onready var interact_cast = $Camera3D/InteractRayCast
 
 
 #***** CAMERA *****#
@@ -37,8 +38,12 @@ func _input(event):
 		isRunning = true
 	if Input.is_action_just_released("run"):
 		isRunning = false
-		
-		
+	if Input.is_action_just_pressed("interact"):
+		var interacted = interact_cast.get_collider()
+		if interacted != null and interacted.is_in_group("Interactable") and interacted.has_method("action_use"):
+			interacted.action_use()
+				
+
 func _process(delta):
 	process_camBob(delta)
 	
@@ -46,7 +51,6 @@ func _process(delta):
 		var walkingTerrain = floorcast.get_collider().get_parent()
 		if walkingTerrain != null:
 			var terraingroup = walkingTerrain.get_groups()[0]
-			print(terraingroup)
 			processGroundSounds(terraingroup)
 
 func processGroundSounds(group : String):
@@ -75,7 +79,12 @@ func process_camBob(delta):
 		
 		var cam_bob # bob speed
 		var objCam # range of up and down
-		if direction != Vector3.ZERO: # NOT IDLE PLAYER
+		
+		if isRunning:
+			cam_bob = floor(abs(direction.z) + abs(direction.x)) * _delta * camBobSpeed * 1.4
+			objCam = origCamPos + Vector3.UP * sin(cam_bob) * camBobUpDown
+		
+		elif direction != Vector3.ZERO: # NOT IDLE PLAYER
 			cam_bob = floor(abs(direction.z) + abs(direction.x)) * _delta * camBobSpeed
 			objCam = origCamPos + Vector3.UP * sin(cam_bob) * camBobUpDown
 		else: # IDLE PLAYER

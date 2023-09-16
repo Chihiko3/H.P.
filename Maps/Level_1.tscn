@@ -1,6 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://cayoiu34pxfpf"]
+[gd_scene load_steps=9 format=3 uid="uid://cayoiu34pxfpf"]
 
+[ext_resource type="PackedScene" uid="uid://cjf7qfq542sml" path="res://Interactables/interact_generic.tscn" id="2_6q146"]
 [ext_resource type="PackedScene" uid="uid://bccdd627wxm4w" path="res://Player/player.tscn" id="2_32c8x"]
+[ext_resource type="PackedScene" uid="uid://ch8uw5b1m260g" path="res://Interactables/cube_interactable.tscn" id="3_tu1fd"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_y5rbw"]
 sky_top_color = Color(0.0901961, 0.45098, 0.498039, 1)
@@ -53,3 +55,9 @@ mesh = SubResource("BoxMesh_rrngp")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D2/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_7mmc4")
+
+[node name="interact_generic" parent="." instance=ExtResource("2_6q146")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.17195, 1.54087, -6.14292)
+
+[node name="CubeInteractable" parent="." instance=ExtResource("3_tu1fd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.08494, 0.716504, -4.84699)

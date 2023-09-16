@@ -1,3 +1,7 @@
-res://Maps/Level_1.tscn
 res://Player/player.tscn
 res://Player/player.gd
+res://Maps/Level_1.tscn
+res://Interactables/interact_generic.tscn
+res://Interactables/interact_generic.gd
+res://Interactables/cube_interactable.tscn
+res://Interactables/cube_interactable.gd
