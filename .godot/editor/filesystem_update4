@@ -1,7 +1,6 @@
-res://Player/player.tscn
-res://Player/player.gd
 res://Maps/Level_1.tscn
+res://Assets/Materials/Textures/wood_1.tres
+res://Assets/Materials/Textures/floor_marble.tres
+res://Player/player.tscn
 res://Interactables/interact_generic.tscn
-res://Interactables/interact_generic.gd
 res://Interactables/cube_interactable.tscn
-res://Interactables/cube_interactable.gd

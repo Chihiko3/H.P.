@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://bo4ouum1dds4x"]
+
+[ext_resource type="Texture2D" uid="uid://drnwungi8h2d2" path="res://Assets/Materials/Textures/floor_marble.png" id="1_8c2re"]
+
+[resource]
+albedo_texture = ExtResource("1_8c2re")
+uv1_scale = Vector3(0.4, 0.4, 0.4)
+uv1_triplanar = true
+uv1_world_triplanar = true
+texture_filter = 0
