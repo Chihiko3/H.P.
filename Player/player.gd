@@ -9,14 +9,15 @@ extends CharacterBody3D
 
 
 #***** CAMERA *****#
-var mouse_sens := 0.15
+var mouse_sens := 0.12
 
 #***** MOVEMENT *****#
 var direction
 var isRunning := false
-var speed := 7
-var jump := 35
-const GRAVITY = 3
+var speed := 4
+var runMultiplyer := 1.4
+var jump := 25
+const GRAVITY = 2
 var distanceFootstep := 0.0
 var playFootstep := 8 #lower => faster
 #***** HEADBOB *****#
@@ -49,7 +50,7 @@ func _process(delta):
 	
 	if floorcast.is_colliding():
 		var walkingTerrain = floorcast.get_collider().get_parent()
-		if walkingTerrain != null:
+		if walkingTerrain != null and walkingTerrain.get_groups().size() > 0:
 			var terraingroup = walkingTerrain.get_groups()[0]
 			processGroundSounds(terraingroup)
 
@@ -107,7 +108,7 @@ func process_movement(delta):
 	
 	direction = Vector3(direction.x,0,direction.z).rotated(Vector3.UP,h_rot).normalized()
 	
-	var actualSpeed = speed if !isRunning else speed * 1.3
+	var actualSpeed = speed if !isRunning else speed * runMultiplyer
 	
 	velocity.x = direction.x * actualSpeed
 	velocity.z = direction.z * actualSpeed
