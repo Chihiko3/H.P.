@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://cayoiu34pxfpf"]
+[gd_scene load_steps=18 format=3 uid="uid://cayoiu34pxfpf"]
 
 [ext_resource type="Material" uid="uid://dr84psopqvwu4" path="res://Assets/Materials/Textures/wood_1.tres" id="1_62nhr"]
 [ext_resource type="Material" uid="uid://bo4ouum1dds4x" path="res://Assets/Materials/Textures/floor_marble.tres" id="1_pfp5t"]
@@ -8,10 +8,11 @@
 [ext_resource type="PackedScene" uid="uid://cov0v0ywqcov1" path="res://Assets/MyModels/Bed.gltf" id="7_o6tqr"]
 [ext_resource type="PackedScene" uid="uid://dnjp11mb3avrn" path="res://Assets/MyModels/Chair.gltf" id="7_vvkpy"]
 [ext_resource type="Texture2D" uid="uid://sn2vn2qkx7xv" path="res://Assets/MyModels/painting.png" id="8_u82vc"]
+[ext_resource type="PackedScene" uid="uid://drrevpktjvtjk" path="res://Assets/MyModels/door.gltf" id="9_0emfk"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_y5rbw"]
-sky_top_color = Color(0.0901961, 0.45098, 0.498039, 1)
-sky_horizon_color = Color(0.715686, 0.634314, 0.701961, 1)
+sky_top_color = Color(0.639216, 0.243137, 0.368627, 1)
+sky_horizon_color = Color(0.733333, 0.588235, 0.882353, 1)
 sky_energy_multiplier = 0.85
 ground_bottom_color = Color(0.00784314, 0.2, 0.215686, 1)
 ground_horizon_color = Color(0.715686, 0.634314, 0.701961, 1)
@@ -151,9 +152,13 @@ shape = SubResource("ConcavePolygonShape3D_13scr")
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
 transform = Transform3D(9, 0, 0, 0, 9, 0, 0, 0, 12.177, 0, 4.81758, -9.79507)
+shaded = true
 double_sided = false
 texture_filter = 0
 texture = ExtResource("8_u82vc")
+
+[node name="door" parent="." instance=ExtResource("9_0emfk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.73602, 0.128063, -4.33726)
 
 [editable path="Chair"]
 [editable path="Bed"]

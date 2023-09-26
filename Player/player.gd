@@ -89,8 +89,8 @@ func process_camBob(delta):
 			cam_bob = floor(abs(direction.z) + abs(direction.x)) * _delta * camBobSpeed
 			objCam = origCamPos + Vector3.UP * sin(cam_bob) * camBobUpDown
 		else: # IDLE PLAYER
-			cam_bob = floor(abs(1) + abs(1)) * _delta * 0.5
-			objCam = origCamPos + Vector3.UP * sin(cam_bob) * camBobUpDown * 0.5
+			cam_bob = floor(abs(1) + abs(1)) * _delta * 0.6
+			objCam = origCamPos + Vector3.UP * sin(cam_bob) * camBobUpDown * 0.2
 		
 		camera_3d.position = camera_3d.position.lerp(objCam, delta)
 
