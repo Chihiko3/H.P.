@@ -23,7 +23,7 @@ var playFootstep := 8 #lower => faster
 #***** HEADBOB *****#
 var _delta := 0.0
 var camBobSpeed := 10
-var camBobUpDown := 0.5
+var camBobUpDown := 0.3
 
 
 func _ready():

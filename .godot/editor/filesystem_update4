@@ -4,3 +4,4 @@ res://Assets/Materials/Textures/floor_marble.tres
 res://Player/player.tscn
 res://Interactables/interact_generic.tscn
 res://Interactables/cube_interactable.tscn
+res://Player/player.gd
