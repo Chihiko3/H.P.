@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://cayoiu34pxfpf"]
+[gd_scene load_steps=17 format=3 uid="uid://cayoiu34pxfpf"]
 
 [ext_resource type="Material" uid="uid://dr84psopqvwu4" path="res://Assets/Materials/Textures/wood_1.tres" id="1_62nhr"]
 [ext_resource type="Material" uid="uid://bo4ouum1dds4x" path="res://Assets/Materials/Textures/floor_marble.tres" id="1_pfp5t"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://ch8uw5b1m260g" path="res://Interactables/cube_interactable.tscn" id="3_tu1fd"]
 [ext_resource type="PackedScene" uid="uid://cov0v0ywqcov1" path="res://Assets/MyModels/Bed.gltf" id="7_o6tqr"]
 [ext_resource type="PackedScene" uid="uid://dnjp11mb3avrn" path="res://Assets/MyModels/Chair.gltf" id="7_vvkpy"]
+[ext_resource type="Texture2D" uid="uid://sn2vn2qkx7xv" path="res://Assets/MyModels/painting.png" id="8_u82vc"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_y5rbw"]
 sky_top_color = Color(0.0901961, 0.45098, 0.498039, 1)
@@ -147,6 +148,12 @@ transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -7.165
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Bed/Bed2/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_13scr")
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(9, 0, 0, 0, 9, 0, 0, 0, 12.177, 0, 4.81758, -9.79507)
+double_sided = false
+texture_filter = 0
+texture = ExtResource("8_u82vc")
 
 [editable path="Chair"]
 [editable path="Bed"]
