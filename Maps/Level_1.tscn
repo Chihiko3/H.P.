@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://cov0v0ywqcov1" path="res://Assets/MyModels/Bed.gltf" id="7_o6tqr"]
 [ext_resource type="PackedScene" uid="uid://dnjp11mb3avrn" path="res://Assets/MyModels/Chair.gltf" id="7_vvkpy"]
 [ext_resource type="Texture2D" uid="uid://sn2vn2qkx7xv" path="res://Assets/MyModels/painting.png" id="8_u82vc"]
-[ext_resource type="PackedScene" uid="uid://drrevpktjvtjk" path="res://Assets/MyModels/door.gltf" id="9_0emfk"]
+[ext_resource type="PackedScene" uid="uid://byhi7pa3o6yn1" path="res://Interactables/door.tscn" id="9_f0vnd"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_y5rbw"]
 sky_top_color = Color(0.639216, 0.243137, 0.368627, 1)
@@ -157,8 +157,8 @@ double_sided = false
 texture_filter = 0
 texture = ExtResource("8_u82vc")
 
-[node name="door" parent="." instance=ExtResource("9_0emfk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.73602, 0.128063, -4.33726)
+[node name="Door" parent="." instance=ExtResource("9_f0vnd")]
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 3.19787, 0.128063, -4.12344)
 
 [editable path="Chair"]
 [editable path="Bed"]
