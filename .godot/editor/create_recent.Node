@@ -1,13 +1,13 @@
-CollisionShape3D
+Area3D
+MeshInstance3D
 StaticBody3D
+CollisionShape3D
 AudioStreamPlayer3D
 AnimationPlayer
 Sprite3D
 Node3D
 OmniLight3D
 SpotLight3D
-MeshInstance3D
-Area3D
 RayCast3D
 AudioStreamPlayer
 Camera3D

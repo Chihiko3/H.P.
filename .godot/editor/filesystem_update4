@@ -1,4 +1,7 @@
-res://Maps/Level_1.tscn
+res://Interactables/door.tscn
 res://Assets/Materials/Textures/wood_1.tres
 res://Assets/Materials/Textures/floor_marble.tres
-res://Interactables/door.tscn
+res://Interactables/door.gd
+res://Maps/Level_1.tscn
+res://Interactables/key.gd
+res://Interactables/key.tscn

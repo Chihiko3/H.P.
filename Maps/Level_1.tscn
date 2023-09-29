@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://cayoiu34pxfpf"]
+[gd_scene load_steps=19 format=3 uid="uid://cayoiu34pxfpf"]
 
 [ext_resource type="Material" uid="uid://dr84psopqvwu4" path="res://Assets/Materials/Textures/wood_1.tres" id="1_62nhr"]
 [ext_resource type="Material" uid="uid://bo4ouum1dds4x" path="res://Assets/Materials/Textures/floor_marble.tres" id="1_pfp5t"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://dnjp11mb3avrn" path="res://Assets/MyModels/Chair.gltf" id="7_vvkpy"]
 [ext_resource type="Texture2D" uid="uid://sn2vn2qkx7xv" path="res://Assets/MyModels/painting.png" id="8_u82vc"]
 [ext_resource type="PackedScene" uid="uid://byhi7pa3o6yn1" path="res://Interactables/door.tscn" id="9_f0vnd"]
+[ext_resource type="PackedScene" uid="uid://dxme5b4j25dn6" path="res://Interactables/key.tscn" id="10_tipx2"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_y5rbw"]
 sky_top_color = Color(0.639216, 0.243137, 0.368627, 1)
@@ -159,6 +160,11 @@ texture = ExtResource("8_u82vc")
 
 [node name="Door" parent="." instance=ExtResource("9_f0vnd")]
 transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 3.19787, 0.128063, -4.12344)
+isLocked = true
+keyPath = NodePath("../Key")
+
+[node name="Key" parent="." instance=ExtResource("10_tipx2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.84552, 1.30791, 0)
 
 [editable path="Chair"]
 [editable path="Bed"]

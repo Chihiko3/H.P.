@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://byhi7pa3o6yn1"]
+[gd_scene load_steps=17 format=3 uid="uid://byhi7pa3o6yn1"]
 
 [ext_resource type="PackedScene" uid="uid://cjf7qfq542sml" path="res://Interactables/interact_generic.tscn" id="1_hjtpx"]
 [ext_resource type="Texture2D" uid="uid://cetqi2nt5t1f" path="res://Assets/MyModels/door_wood_2.png" id="2_vclge"]
@@ -88,6 +88,18 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("SoundsDoor:stream")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("4_42nup")]
 }
 
 [sub_resource type="Animation" id="Animation_st6ml"]
@@ -192,16 +204,74 @@ tracks/3/keys = {
 "values": [true]
 }
 
+[sub_resource type="Animation" id="Animation_swcje"]
+resource_name = "locked_door"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("door/DoorOutside/DoorInside:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, -0.0872665, 0), Vector3(0, 0, 0)]
+}
+tracks/1/type = "audio"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("SoundsDoor")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": null
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/1/use_blend = true
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("SoundsDoor:stream")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("4_42nup")]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("SoundsDoor:playing")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_me1rm"]
 _data = {
 "RESET": SubResource("Animation_osie5"),
 "door_close": SubResource("Animation_st6ml"),
-"door_open": SubResource("Animation_explu")
+"door_open": SubResource("Animation_explu"),
+"locked_door": SubResource("Animation_swcje")
 }
 
 [node name="Door" instance=ExtResource("1_hjtpx")]
 transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 0, 0, 0)
 script = ExtResource("2_ymico")
+isLocked = false
+keyPath = NodePath("")
 
 [node name="CollisionShape3D" parent="." index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0228087, 1.8549, 0.0234328)
